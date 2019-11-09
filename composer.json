@@ -1,0 +1,19 @@
+{
+    "name": "product/api",
+    "authors": [
+        {
+            "name": "Najmul Ahmed",
+            "email": "najmul2022@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-session": "*",
+        "ext-json": "*",
+        "ext-pdo": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "API\\":"src/"
+        }
+    }
+}
