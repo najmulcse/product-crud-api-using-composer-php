@@ -10,7 +10,7 @@ class Database
 {
 
     private $host = "localhost";
-    private $db_name = "wedev_products";
+    private $db_name = "react_product_crud_app";
     private $username = "root";
     private $password = "";
     public $conn;
