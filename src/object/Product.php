@@ -25,6 +25,7 @@ class Product{
     }
 
     // read products
+
     public function read(){
 
         // select all query
@@ -39,8 +40,32 @@ class Product{
         return $stmt;
     }
     // create product
+
+    public function createTable()
+    {
+        $table = "products";
+        try {
+           
+            $this->conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );//Error Handling
+            $sql ="CREATE TABLE IF NOT EXISTS ".$this->table_name."(
+            id INT( 11 ) AUTO_INCREMENT PRIMARY KEY,
+            name VARCHAR( 250 ) NOT NULL,
+            slug VARCHAR( 150 ) NOT NULL, 
+            price VARCHAR( 150 ) NOT NULL, 
+            description VARCHAR( 50 ) NOT NULL);" ;
+            $this->conn->exec($sql);
+
+        } catch(PDOException $e) {
+            echo $e->getMessage();//Remove or change message in production code
+        }
+    }
     public function create(){
 
+        $query = "SHOW TABLES LIKE " .$this->table_name;   
+        $table = $this->conn->exec($query);
+        if(!$table){
+            $this->createTable();
+        }
         // query to insert record
         $query = "INSERT INTO
                 " . $this->table_name . "

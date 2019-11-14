@@ -10,7 +10,7 @@ use API\config\Database;
 use API\object\Product;
 
 // include database and object files
-require_once __DIR__ . '../../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 
 // get database connection
 $database = new Database();

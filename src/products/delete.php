@@ -7,7 +7,7 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 // include database and object file
-require_once __DIR__ . '../../vendor/autoload.php';
+require_once '../../vendor/autoload.php';
 // get database connection
 use API\config\Database;
 use API\object\Product;
